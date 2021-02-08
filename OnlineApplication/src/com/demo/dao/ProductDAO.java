@@ -1,14 +1,13 @@
-package com.demo.service;
+package com.demo.dao;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import com.demo.pojo.Category;
 import com.demo.pojo.Product;
 
-public interface ProductService {
+public interface ProductDAO {
 
-	List<Product> getAllProduct(int id) throws SQLException;
+	List<Product> getAllProduct(int cid) throws SQLException;
 
 	Product getProduct(int pid) throws SQLException;
 

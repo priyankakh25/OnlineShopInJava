@@ -22,35 +22,35 @@
 								<label for="fname" class="col-md-2 col-form-label">Name</label>
 								<div class="col-sm-10 row">
 									<div class="col">
-										<input type="text" class="form-control" id="fname" name="fname" />
+										<input type="text" class="form-control" id="fname" name="fname" placeholder="Enter First name"/>
 									</div>
 									<div class="col">
-										<input type="text" class="form-control" id="lname" name="lname" />
+										<input type="text" class="form-control" id="lname" name="lname" placeholder="Enter Last name" />
 									</div>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="address" class="col-md-2 col-form-label">Address</label>
 								<div class="col-sm-10">
-									<textarea class="form-control" rows="3" id="address" name="address"></textarea>
+									<textarea class="form-control" rows="3" id="address" name="address" placeholder="Enter Address"></textarea>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="mobile" class="col-md-2 col-form-label">Mobile</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="mobile" name="mobile" />
+									<input type="text" class="form-control" id="mobile" name="mobile" placeholder="Enter mobile"/>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="email" class="col-md-2 col-form-label">Email</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" id="email" name="email" />
+									<input type="text" class="form-control" id="email" name="email" placeholder="Enter Email"/>
 								</div>
 							</div>
 							<div class="form-group row">
 								<label for="password" class="col-md-2 col-form-label">Password</label>
 								<div class="col-sm-10">
-								 <input type="password" class="form-control" id="password" name="password" />
+								 <input type="password" class="form-control" id="password" name="password" placeholder="Enter password"/>
 								 </div>
 							</div>
 

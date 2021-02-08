@@ -17,15 +17,36 @@ import com.demo.service.UserServiceImpl;
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/logout")
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	UserService userService = new UserServiceImpl();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getSession().invalidate();
-		response.sendRedirect("login");
+		request.getRequestDispatcher("views/login.jsp").forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String email = request.getParameter("email");
+		String pass = request.getParameter("password");
+		User user=null;
+		String msg;
+		try {
+			user = userService.validate(email, pass);
+		} catch (SQLException e) {
+			msg="Database Error";
+		}
+		if (user != null) {
+			HttpSession session=request.getSession();
+			session.setAttribute("user", user);
+			response.sendRedirect("home");
+		} else {
+			msg="Invalid User";
+			request.setAttribute("errorMsg", msg);
+			request.getRequestDispatcher("views/login.jsp").forward(request, response);
+		}
 	}
 
 	

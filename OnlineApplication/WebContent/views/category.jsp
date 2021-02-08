@@ -29,7 +29,7 @@
 				<div class="card-body">
 					<h5 class="card-title"><%=c.getCname() %></h5>
 					
-					<a href="product?cid=<%=c.getCid() %>" class="btn btn-primary btn-block">Click</a>
+					<a href="product?cid=<%=c.getCid() %>" class="btn btn-warning btn-block">Click</a>
 				</div>
 			</div>
 		</div>

@@ -11,24 +11,33 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.demo.pojo.Category;
+import com.demo.pojo.Product;
 import com.demo.service.CategoryService;
-import com.demo.service.CategoryServiceImpl;
+import com.demo.service.ProductService;
+import com.demo.service.ProductServiceImpl;
 import com.demo.service.CategoryService;
 
-@WebServlet("/category")
-public class CategoryServlet extends HttpServlet {
+@WebServlet("/product")
+public class ProductServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	CategoryService cateoryService=new CategoryServiceImpl();
+	ProductService productService=new ProductServiceImpl();
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
-			List<Category> list=cateoryService.getCategory();
-			//list.stream().forEach(System.out::println);
-			req.setAttribute("list", list);
+			List<Product> plist;
+			if(req.getParameter("cid")==null) {
+				plist=productService.getAllProduct();
+			}
+			else {
+				int cid=Integer.parseInt(req.getParameter("cid"));
+				plist=productService.getAllProduct(cid);
+			}
+			req.setAttribute("productList", plist);
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 			req.setAttribute("errorMsg", e.getMessage());
 		}
-		req.getRequestDispatcher("views/category.jsp").forward(req, resp);
+		req.getRequestDispatcher("views/product.jsp").forward(req, resp);
 	}
 }
