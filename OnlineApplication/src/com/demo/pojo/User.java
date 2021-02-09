@@ -27,6 +27,17 @@ public class User {
 		this.role = role;
 	}
 
+	public User(String fname, String lname, String address, String email, String password, String phone, String role) {
+		super();
+		this.fname = fname;
+		this.lname = lname;
+		this.address = address;
+		this.email = email;
+		this.password = password;
+		this.phone = phone;
+		this.role = role;
+	}
+
 	public int getId() {
 		return id;
 	}

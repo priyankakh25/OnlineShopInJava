@@ -29,7 +29,7 @@ public class ProductDAOImpl implements ProductDAO{
 		psAllProductByCid.setInt(1, cid);
 		ResultSet rs = psAllProductByCid.executeQuery();
 		while (rs.next()) {
-			plist.add(new Product(rs.getInt("pid"),rs.getString("pname"),rs.getInt("qty"),rs.getDouble("price"),rs.getString("imageUrl"),rs.getInt("cid")));
+			plist.add(new Product(rs.getInt("pid"),rs.getString("pname"),rs.getInt("qty"),rs.getDouble("price"),rs.getString("imageUrl"),rs.getInt("cid"),rs.getString("brandname"),rs.getString("subcategory"),rs.getString("description"),rs.getString("weight")));
 		}
 
 		return plist;
@@ -39,7 +39,7 @@ public class ProductDAOImpl implements ProductDAO{
 		List<Product> plist = new ArrayList<Product>();
 		ResultSet rs = psAllProduct.executeQuery();
 		while (rs.next()) {
-			plist.add(new Product(rs.getInt("pid"),rs.getString("pname"),rs.getInt("qty"),rs.getDouble("price"),rs.getString("imageUrl"),rs.getInt("cid")));
+			plist.add(new Product(rs.getInt("pid"),rs.getString("pname"),rs.getInt("qty"),rs.getDouble("price"),rs.getString("imageUrl"),rs.getInt("cid"),rs.getString("brandname"),rs.getString("subcategory"),rs.getString("description"),rs.getString("weight")));
 		}
 
 		return plist;
@@ -50,7 +50,7 @@ public class ProductDAOImpl implements ProductDAO{
 		pstGetProduct.setInt(1, pid);
 		ResultSet rs = pstGetProduct.executeQuery();
 		if (rs.next()) {
-			product=new Product(rs.getInt("pid"),rs.getString("pname"),rs.getInt("qty"),rs.getDouble("price"),rs.getString("imageUrl"),rs.getInt("cid"));
+			product=new Product(rs.getInt("pid"),rs.getString("pname"),rs.getInt("qty"),rs.getDouble("price"),rs.getString("imageUrl"),rs.getInt("cid"),rs.getString("brandname"),rs.getString("subcategory"),rs.getString("description"),rs.getString("weight"));
 			return product;
 		}
 		return null;

@@ -7,7 +7,12 @@ public class Product {
 	private double price;
 	private String imageUrl;
 	private int cid;
-	public Product(int pid, String pname, int qty, double price, String imageUrl, int cid) {
+	private String brandName;
+	private String subcategory;
+	private String description;
+	private String wt;
+	public Product(int pid, String pname, int qty, double price, String imageUrl, int cid, String brandName,
+			String subcategory, String description, String wt) {
 		super();
 		this.pid = pid;
 		this.pname = pname;
@@ -15,6 +20,10 @@ public class Product {
 		this.price = price;
 		this.imageUrl = imageUrl;
 		this.cid = cid;
+		this.brandName = brandName;
+		this.subcategory = subcategory;
+		this.description = description;
+		this.wt = wt;
 	}
 	public Product() {
 		super();
@@ -55,9 +64,35 @@ public class Product {
 	public void setCid(int cid) {
 		this.cid = cid;
 	}
+	public String getBrandName() {
+		return brandName;
+	}
+	public void setBrandName(String brandName) {
+		this.brandName = brandName;
+	}
+	public String getSubcategory() {
+		return subcategory;
+	}
+	public void setSubcategory(String subcategory) {
+		this.subcategory = subcategory;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getWt() {
+		return wt;
+	}
+	public void setWt(String wt) {
+		this.wt = wt;
+	}
 	@Override
 	public String toString() {
 		return "Product [pid=" + pid + ", pname=" + pname + ", qty=" + qty + ", price=" + price + ", imageUrl="
-				+ imageUrl + ", cid=" + cid + "]";
+				+ imageUrl + ", cid=" + cid + ", brandName=" + brandName + ", subcategory=" + subcategory
+				+ ", description=" + description + ", wt=" + wt + "]";
 	}
+	
 }

@@ -14,7 +14,7 @@ public class UserDAOImpl implements UserDAO {
 	public UserDAOImpl() {
 		try {
 			pstInsert = DBUtiil.getConnection()
-					.prepareStatement("insert into users(id,name,email,address,password) value(?,?,?,?,?)");
+					.prepareStatement("insert into users(firstname,lastname,address,email,password,mobile, role) value(?,?,?,?,?,?,?)");
 			pstUpdate = DBUtiil.getConnection()
 					.prepareStatement("update users set name=?,email=?,address=? where id=?");
 			pstDelete = DBUtiil.getConnection().prepareStatement("delete from users where id=?");
@@ -31,7 +31,7 @@ public class UserDAOImpl implements UserDAO {
 		pstValid.setString(1, uname);
 		pstValid.setString(2, pass);
 		ResultSet rs = pstValid.executeQuery();
-		System.out.println("Authenticate:-" + uname + "," + pass);
+		//System.out.println("Authenticate:-" + uname + "," + pass);
 		User user = null;
 		if (rs.next()) {
 
@@ -47,12 +47,18 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public boolean save(User u) throws SQLException {
-		/*
-		 * pstInsert.setInt(1, u.getId()); pstInsert.setString(2, u.getName());
-		 * pstInsert.setString(3, u.getEmail()); pstInsert.setString(4, u.getAddress());
-		 * pstInsert.setString(5, u.getPassword()); if(pstInsert.executeUpdate()>0) {
-		 * return true; }
-		 */
+		
+		  pstInsert.setString(1, u.getFname());
+		  pstInsert.setString(2, u.getLname());
+		  pstInsert.setString(3, u.getAddress());
+		  pstInsert.setString(4, u.getEmail()); 
+		  pstInsert.setString(5, u.getPassword());
+		  pstInsert.setString(6, u.getPhone());
+		  pstInsert.setString(7, u.getRole());
+		  if(pstInsert.executeUpdate()>0) {
+			  	return true;
+		  }
+		 
 		return false;
 	}
 

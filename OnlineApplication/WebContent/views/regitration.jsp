@@ -53,8 +53,15 @@
 								 <input type="password" class="form-control" id="password" name="password" placeholder="Enter password"/>
 								 </div>
 							</div>
+							<div class="form-group row">
+								<label for="role" class="col-md-2 col-form-label">Role</label>
+								<div class="col-sm-10">
+								 <input type="text" class="form-control" id="role" name="role" placeholder="Enter role"/>
+								 </div>
+							</div>
 
-							<button type="submit" class="btn btn-success btn-block">SignIn</button>
+							<button type="submit" class="btn btn-success btn-block">Register</button>
+							<a href="login">Login</a>
 						</form>
 					</div>
 				</div>

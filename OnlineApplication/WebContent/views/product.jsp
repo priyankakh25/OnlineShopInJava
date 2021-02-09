@@ -27,13 +27,13 @@
 			
 			<div class="col-md-3 p-1">
 				<div class="card h-100" >
-					<a href="productDetails?pid=<%=p.getPid() %>"><img src="resources/img/<%=p.getImageUrl()%>" class="card-img-top h-100" alt="<%=p.getPname()%>"></a>
+					<img src="resources/img/<%=p.getImageUrl()%>" class="card-img-top" alt="<%=p.getPname()%>">
 					<div class="card-body">
 						<h5 class="card-title"><%=p.getPname()%></h5>
 						<p>Price:&#8377;<%=p.getPrice()%></p>
 						<div class="row">
 							<div class="col">
-								<a href="productDetails?pid=<%=p.getPid() %>" class="btn btn-info btn-block">Details</a>
+								<a href="productDetails?pid=<%=p.getPid() %>" class="btn btn-info btn-block stretched-link">Details</a>
 							</div>
 							<div class="col">
 								<a href="addToCart?pid=<%=p.getPid() %>&qty=1" class="btn btn-success btn-block">Add to Cart</a>

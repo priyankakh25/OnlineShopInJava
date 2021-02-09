@@ -40,6 +40,7 @@
 							</div>
 
 							<button type="submit" class="btn btn-success btn-block">SignIn</button>
+							<a href="register">New User Register</a>
 						</form>
 					</div>
 				</div>

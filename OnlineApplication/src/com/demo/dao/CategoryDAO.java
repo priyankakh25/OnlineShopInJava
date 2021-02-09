@@ -9,4 +9,6 @@ public interface CategoryDAO {
 
 	List<Category> getAll() throws SQLException;
 
+	Category getCategory(int cid) throws SQLException;
+
 }

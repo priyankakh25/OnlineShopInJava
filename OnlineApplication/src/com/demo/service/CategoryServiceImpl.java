@@ -14,4 +14,9 @@ public class CategoryServiceImpl implements CategoryService {
 	public List<Category> getCategory() throws SQLException {
 		return categoryDAO.getAll();
 	}
+	@Override
+	public Category getCategory(int cid) throws SQLException {
+		
+		return categoryDAO.getCategory(cid);
+	}
 }

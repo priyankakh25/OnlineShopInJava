@@ -41,7 +41,10 @@ public class LoginServlet extends HttpServlet {
 		if (user != null) {
 			HttpSession session=request.getSession();
 			session.setAttribute("user", user);
-			response.sendRedirect("home");
+			if(user.getRole().equals("admin"))
+				response.sendRedirect("adminHome");
+			else
+				response.sendRedirect("home");
 		} else {
 			msg="Invalid User";
 			request.setAttribute("errorMsg", msg);

@@ -25,11 +25,11 @@
 		%>
 		<div class="col-md-3">
 			<div class="card " style="height: 25rem;">
-				<img src="resources/img/<%=c.getImgUrl() %>" class="card-img-top h-100" alt="<%=c.getCname() %>">
+				<img src="resources/img/<%=c.getImgUrl() %>" class="card-img-top" alt="<%=c.getCname() %>">
 				<div class="card-body">
 					<h5 class="card-title"><%=c.getCname() %></h5>
 					
-					<a href="product?cid=<%=c.getCid() %>" class="btn btn-warning btn-block">Click</a>
+					<a href="product?cid=<%=c.getCid() %>" class="btn btn-warning btn-block stretched-link">Click</a>
 				</div>
 			</div>
 		</div>

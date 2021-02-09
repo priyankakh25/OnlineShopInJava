@@ -12,5 +12,10 @@ public class UserServiceImpl implements UserService {
 	public User validate(String email, String pass) throws SQLException {
 		return userDAO.authenticate(email, pass);
 	}
+	@Override
+	public boolean save(User u) throws SQLException {
+		
+		return userDAO.save(u);
+	}
 
 }

@@ -10,4 +10,6 @@ public interface CategoryService {
 
 	List<Category> getCategory() throws SQLException;
 
+	Category getCategory(int cid) throws SQLException;
+
 }
